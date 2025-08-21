@@ -88,6 +88,7 @@ El profe nos mandó de tarea usar el texto que queremos trabajar, con los siguie
 
 la verdad no soy una persona muy "computin" como se dice coloquialmente, por lo que en la clase no logré comprender todos los conceptos a aplicar en Processing, así que le pedí a chatgpt que hiciera un código. Luego de pedirle y corregir 10 veces, logré algo cercano a lo que quería. Lo pongo a continuación
 
+```
 // Afiche Constructivista Animado con Líneas Rojas y Nueva Línea Izquierda
 
 PFont font;
@@ -192,7 +193,7 @@ void draw() {
     }
   }
 }
-
+```
 Como me interesa aprender, le pedí a chatgpt que me fuera explicando paso por paso qué fue lo que hizo
 Le hice un ajuste a esta parte
 
