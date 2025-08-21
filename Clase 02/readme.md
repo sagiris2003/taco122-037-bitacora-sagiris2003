@@ -81,3 +81,129 @@ void draw() {
   text("saludos", 150, 500);
 }
 
+## próxima entrega
+El profe nos mandó de tarea usar el texto que queremos trabajar, con los siguientes requerimientos:
+- debemos basarnos en el constructivismo ruso
+- debe tener movimiento
+
+la verdad no soy una persona muy "computin" como se dice coloquialmente, por lo que en la clase no logré comprender todos los conceptos a aplicar en Processing, así que le pedí a chatgpt que hiciera un código. Luego de pedirle y corregir 10 veces, logré algo cercano a lo que quería. Lo pongo a continuación
+
+// Afiche Constructivista Animado con Líneas Rojas y Nueva Línea Izquierda
+
+PFont font;
+
+// Variables triángulo giratorio (arriba izq.)
+float angulo = 0;
+
+// Variables círculo central
+float posX;
+boolean derecha = true;
+
+// Variables texto
+float textoX;
+boolean proyectando = true;
+
+void setup() {
+  size(900, 600);
+  font = createFont("Arial-Bold", 22);
+  textFont(font);
+  textAlign(LEFT, CENTER);
+  
+  posX = width/2;
+  textoX = 120; // posición inicial desde el proyector
+}
+
+void draw() {
+  background(120); // fondo gris oscuro
+  
+  // --- Triángulo girando (arriba izquierda, grande) ---
+  pushMatrix();
+  translate(120, 120);
+  rotate(radians(angulo));
+  fill(200, 0, 0);
+  noStroke();
+  triangle(-80, 80, 80, 80, 0, -120); // triángulo grande
+  popMatrix();
+  
+  angulo += 0.5; // velocidad de rotación
+  
+  // --- Línea abajo derecha (roja) ---
+  stroke(255, 0, 0); // roja
+  strokeWeight(18); // más gruesa
+  line(width-180, height, width, height-180);
+  
+  // --- Línea izquierda (nueva) ---
+  stroke(0); // negra
+  strokeWeight(14); // gruesa
+  line(60, 0, 150, height/2); // diagonal desde parte izquierda superior
+  
+  // --- Cuadrado muy grueso, pegado a la esquina superior derecha ---
+  stroke(0);
+  strokeWeight(28); // muy grueso
+  noFill();
+  
+  float tamCuadrado = 400; // tamaño del cuadrado
+  rectMode(CORNER);
+  rect(width - tamCuadrado, 0, tamCuadrado, tamCuadrado); // pegado a esquina superior derecha
+  
+  // --- Círculo central en movimiento ---
+  noStroke();
+  fill(0);
+  ellipse(posX, height/2, 100, 100);
+  
+  if (derecha) {
+    posX += 2;
+    if (posX > width - 100) derecha = false;
+  } else {
+    posX -= 2;
+    if (posX < 100) derecha = true;
+  }
+  
+  // --- Proyector (abajo izquierda) ---
+  fill(50);
+  rect(50, height-120, 60, 60); // cuerpo
+  triangle(110, height-120, 150, height-90, 110, height-60); // lente
+  
+  // --- Haz de luz proyectado ---
+  noStroke();
+  fill(255, 220, 150, 180); // luz amarillenta semitransparente
+  beginShape();
+  vertex(110, height-120);
+  vertex(110, height-60);
+  vertex(width, height-200);
+  vertex(width, height);
+  endShape(CLOSE);
+  
+  // --- Texto dentro del haz ---
+  fill(0);
+  text("PARA NOSOTROS EL CINE COMIENZA CON CADA", textoX, height-90);
+  text("NUEVO ZUMBIDO DEL PROYECTOR", textoX, height-60);
+  
+  // Movimiento del texto (sale y vuelve a entrar)
+  if (proyectando) {
+    textoX += 2; // avanza hacia la derecha
+    if (textoX > width - 400) {
+      proyectando = false;
+    }
+  } else {
+    textoX -= 2; // regresa al proyector
+    if (textoX < 120) {
+      proyectando = true;
+    }
+  }
+}
+
+Como me interesa aprender, le pedí a chatgpt que me fuera explicando paso por paso qué fue lo que hizo
+Le hice un ajuste a esta parte
+
+// Variables círculo central
+float posX;
+boolean derecha = true;
+
+lo cambié por
+
+// Variables círculo central
+float posX;
+boolean derecha = false;
+
+esto lo hice para que el círculo fuera hacia la izquierda en vez de la derecha, así el peso visual no se carga a la derecha y el movimiento del círculo se contrasta con el de la frase.
