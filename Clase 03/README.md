@@ -12,3 +12,15 @@ Para subir imágenes debemos crear una carte aparte, la cual debe contener las i
 ```
 
 ![pantera rosa](./imágenes/Panterarosa.png)
+
+# Arduino
+Comenzamos a ver Arduino
+- Ingresamos a Arduino.cc y le damos permiso para todo
+- luego debemos descargar un driver para que la app se comunique con nuestro arduino que es copia. El driver se llama "Driver ch340"
+
+¿Qué hace arduino?
+- tiene inputs y outputs
+- recibe información de sensores, los convierte en datos y tiene actuadores
+    Tipos de actuadores: motores, luces, sonidos
+  Digital In solo recibe órdenes binarias: 0 o 1, encendido o apagado, high o low
+  
