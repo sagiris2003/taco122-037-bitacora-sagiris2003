@@ -137,3 +137,6 @@ void loop()
     delay(finLetra);
 }
 ```
+
+# Encargo 3
+debemos escribir el texto que escogimos en morse, a través del ledPin de nuestro arduino UNO.
