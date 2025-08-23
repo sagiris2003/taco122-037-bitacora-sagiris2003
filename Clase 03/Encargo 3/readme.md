@@ -357,19 +357,69 @@ además agregué las siguientes variables
 int finPalabra = 2000;
 int finFrase = 5000;
 ```
-el código de mi texto en morse queda así
+quiero agregar un inicio y fin de mensaje
+que sean 8 A rápidas, hice estas variables
+
+```
+int puntoInicio = 100;
+int separadorInicio = 150;
+int rayaInicio = 500;
+```
+establecí esta función que marca el puntoInicio y rayaInicio
+```
+void puntoInicial(){
+  digitalWrite(ledPin,HIGH);
+    Serial.println("inicio de mensaje");
+    //esperamos el punto encendido
+    delay(puntoInicio);
+    //apagamos el punto
+    digitalWrite(ledPin,LOW);
+    //el espacio despues del punto
+    delay(separadorInicio);
+}
+
+void rayaInicial(){
+digitalWrite(ledPin,HIGH);
+    Serial.println("inicio de mensaje");
+    //espero el tiempo de la raya
+    delay(rayaInicio);
+    //apagamos la raya
+    digitalWrite(ledPin,LOW);
+    delay(separadorInicio);
+}
+    ```
+establezco una función para inicio de mensaje
+```
+void Inicio(){
+ puntoInicial();rayaInicial();puntoInicial();rayaInicial();
+ puntoInicial();rayaInicial();puntoInicial();rayaInicial();
+ puntoInicial();rayaInicial();puntoInicial();rayaInicial();
+ puntoInicial();rayaInicial();puntoInicial();rayaInicial();
+}
+```
+
+le hice los ajustes finales y el código de mi texto en morse queda así
 
 ```
 //debo escribir el texto "para nosotros el cine comienza
 // con cada nuevo zumbido del proyector"
 
 int ledPin = 13;
+
+//establezco la duración de los puntos y rayas
+//del inicio y final de mensaje
+int puntoInicio = 100;
+int separadorInicio = 150;
+int rayaInicio = 500;
+
 int tiempoPunto = 300;
 int separador = 250;
 int tiempoRaya = 700;
 int finLetra = 1000;
 int finPalabra = 2000;
 int finFrase = 5000;
+
+
 void setup() {
   pinMode(ledPin,OUTPUT);
   //9600 es el baudrate
@@ -378,6 +428,33 @@ void setup() {
 
 }
 
+void puntoInicial(){
+  digitalWrite(ledPin,HIGH);
+    Serial.println("inicio de mensaje");
+    //esperamos el punto encendido
+    delay(puntoInicio);
+    //apagamos el punto
+    digitalWrite(ledPin,LOW);
+    //el espacio despues del punto
+    delay(separadorInicio);
+}
+
+void rayaInicial(){
+digitalWrite(ledPin,HIGH);
+    Serial.println("inicio de mensaje");
+    //espero el tiempo de la raya
+    delay(rayaInicio);
+    //apagamos la raya
+    digitalWrite(ledPin,LOW);
+    delay(separadorInicio);
+}
+//establezco una funcion de inicio de mensaje
+void Inicio(){
+ puntoInicial();rayaInicial();puntoInicial();rayaInicial();
+ puntoInicial();rayaInicial();puntoInicial();rayaInicial();
+ puntoInicial();rayaInicial();puntoInicial();rayaInicial();
+ puntoInicial();rayaInicial();puntoInicial();rayaInicial();
+}
 
 //estableceré una función que genere un punto
 void punto(){
@@ -511,8 +588,13 @@ void z(){
   raya();raya();punto();punto();delay(finLetra);
 }
 
+
+
 //estableceré el loop
 void loop() {
+  
+  Inicio();
+  delay (finPalabra);
   // escribo el texto con las funciones de letras
 p();
 a();
@@ -582,8 +664,6 @@ t();
 o();
 r();
 delay (finFrase);
-
+Inicio();
 }
 ```
-
-
