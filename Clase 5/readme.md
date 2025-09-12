@@ -8,6 +8,7 @@ una por cada estudiante, puedo crear esta estructura que agrupe a todos los estu
 
 para declarar el array se hace así
 
+
 ´´´
 int numerosLost[] = {4, 8, 15, 16, 23, 42};
 String lineasPoema[];
@@ -56,6 +57,7 @@ for (int i = 0; i < 7; i++ ){
 Serial.println(lineasPoema[i]);
 }
 }
+
 ´´´
 ## Pantalla OLED
 ### Protocolos
