@@ -10,6 +10,7 @@ el led tiene una polaridad, la patita más larga es ánodo (positivo) y la más 
 
 ### Potenciómetro
 Es un aparato que nos permite regular la energía que recibe un circuito, a diferencia de la resistencia, este lo hace de manera variable
+
 ![esquema](./Imagenes/potenciometro.png)
 
 ### Resistencia
