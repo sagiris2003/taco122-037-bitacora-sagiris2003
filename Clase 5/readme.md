@@ -9,9 +9,10 @@ una por cada estudiante, puedo crear esta estructura que agrupe a todos los estu
 para declarar el array se hace así
 
 
-´´´
+```
 int numerosLost[] = {4, 8, 15, 16, 23, 42};
 String lineasPoema[];
+
 {
 "Señor",
 "La jaula se ha vuelto pájaro",
@@ -21,6 +22,7 @@ String lineasPoema[];
 "y sonríe detrás del viento",
 "a mis delirios",
 }
+
 void setup() {
 Serial.begin(9600);
   // para usar la variable en un array
@@ -48,9 +50,11 @@ for (int i = 0; i <=5; i++ ){
     Serial.println(numerosLost[i]);
     delay(1000);
   }
-  }
+  
+  
   Serial.println("salí del ciclo for");
 }
+
 void loop() {
   // put your main code here, to run repeatedly:
 for (int i = 0; i < 7; i++ ){
@@ -58,7 +62,7 @@ Serial.println(lineasPoema[i]);
 }
 }
 
-´´´
+```
 ## Pantalla OLED
 ### Protocolos
 usb/serial
