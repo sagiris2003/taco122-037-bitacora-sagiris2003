@@ -6,6 +6,10 @@ La idea es hacer un recopilatorio de todas las personas que miren la obra, pero 
 
 También había pensado que estas fotos, en vez de estar pixeladas, se impriman dibujadas, pero eso sería mucho más complejo.
 
+## cómo lo hago?
+en conversaciones con mi asistente (chatgpt), llegamos a la conclusión de que hay que usar la pantalla y la impresora de la transbank de forma independiente, ya que la interfaz de
+la transbank no es abierta
+
 Referencias
 
 ![imagenimpresa](./imagenes/dibujoimpreso.jpg)
