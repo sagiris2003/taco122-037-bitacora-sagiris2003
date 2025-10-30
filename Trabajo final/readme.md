@@ -15,3 +15,8 @@ Referencias
 ![imagenimpresa](./imagenes/dibujoimpreso.jpg)
 ![imagenimpresa](./imagenes/papeltirado.jpg)
 ![imagenimpresa](./imagenes/papeltirado2.jpg)
+
+## pasos a seguir
+1. en procesing me muestre la webcam y que según algo me guarde la imagen een el escritorio
+2. buscar script de pyton que me imprima un archivo del pc
+3. hacer que arduino envíe la señal para hacer todo esto
